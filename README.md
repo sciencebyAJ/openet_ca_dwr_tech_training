@@ -3,6 +3,11 @@
 
 The notebooks and files in this repository were prepared for an OpenET Technical Training for the California Department of Water Resources in September 2026.
 
+### slide decks will be posted here
+
+
+## Get Set Up for the Workshp:
+
 ### Installing the Python dependencies
 
 These instructions are written for users who are new to Python. The recommended approach is to create a virtual environment for this repository. A virtual environment keeps this project's packages separate from other Python projects on your computer.
