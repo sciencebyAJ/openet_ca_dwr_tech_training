@@ -1,0 +1,14 @@
+# Core data access and analysis
+requests>=2.31
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+contextily>=1.4
+
+# Geospatial data
+shapely>=2.0
+geopandas>=0.14
+rioxarray>=0.15
+
+# Notebook support
+jupyterlab>=4.0
