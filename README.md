@@ -1,16 +1,16 @@
 # openet_ca_dwr_tech_training
+
 ## OpenET Technical Training Resources for California DWR
 
 The notebooks and files in this repository were prepared for an OpenET Technical Training for the California Department of Water Resources in September 2026.
 
-### slide decks will be posted here
+### Slide decks will be posted here
 
+## Get Set Up for the Workshop
 
-## Get Set Up for the Workshp:
+### Installing Python and package dependencies
 
-### Installing the Python dependencies
-
-These instructions are written for users who are new to Python. The recommended approach is to create a virtual environment for this repository. A virtual environment keeps this project's packages separate from other Python projects on your computer.
+These instructions install the required Python packages to follow along and participate in the workshop.
 
 #### 1. Install Python
 
@@ -31,64 +31,120 @@ py --version
 ```
 
 #### 2. Open a terminal in the repository folder
-
-Move into the folder that contains this `requirements.txt` file. For example:
+Download the `requirements.txt` file from this repository. Navigate into the folder that contains this `requirements.txt` file. For example:
 
 ```bash
 cd path/to/this/repository
 ```
 
-On Windows PowerShell, use the same command with the repository's actual folder path.
+On Windows PowerShell, use the repository's actual folder path.
 
-### 3. Create a virtual environment
+#### 3. Install the required packages
 
-#### macOS or Linux
+##### macOS or Linux
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m pip install --user --upgrade pip
+python3 -m pip install --user -r requirements.txt
 ```
 
-#### Windows PowerShell
+##### Windows PowerShell
 
 ```powershell
-py -m venv .venv
-.venv\Scripts\Activate.ps1
+py -m pip install --user --upgrade pip
+py -m pip install --user -r requirements.txt
 ```
 
-After activation, your terminal usually shows `(.venv)` at the beginning of the prompt.
+The above commands read the package names in `requirements.txt` and installs them in your Python environment. Some of the the geospatial packages may take a few minutes to install. It's important for the requirements to be fully installed to ensure the Python environment works appropriately.
 
-### 4. Install the requirements
+#### 4. Confirm that the packages work
 
-With the virtual environment activated, run:
+In terminal or PowerShell paste the following command to verify the dependencies are installed.
+
+##### macOS or Linux
 
 ```bash
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+python3 -c "import geopandas, matplotlib, numpy, pandas, requests, rioxarray, shapely; print('Dependencies installed successfully.')"
 ```
 
-The second command reads the package names in `requirements.txt` and installs them. The geospatial packages may take a few minutes to install.
+##### Windows PowerShell
 
-### 5. Start JupyterLab
+```powershell
+py -c "import geopandas, matplotlib, numpy, pandas, requests, rioxarray, shapely; print('Dependencies installed successfully.')"
+```
+
+#### 5. Confirm JupyterLab is installed.
+##### macOS or Linux
 
 ```bash
-jupyter lab
+python3 -m jupyter lab
 ```
 
-This opens JupyterLab in a web browser. Open the notebook from the repository and select the Python kernel associated with `.venv` if Jupyter asks you to choose one.
+##### Windows PowerShell
 
-### 6. Confirm that the packages work
-
-Run this from the activated virtual environment:
-
-```bash
-python -c "import geopandas, matplotlib, numpy, pandas, requests, rioxarray, shapely; print('Dependencies installed successfully.')"
+```powershell
+py -m jupyter lab
 ```
+
+This opens JupyterLab in a web browser. Open the notebook from the repository and select the Python installation where you installed the packages, if Jupyter asks you to choose a kernel.
+
 
 ### Troubleshooting
 
 - If `python3` is not recognized, try `python`. On Windows, try `py`.
-- If a command says that pip is not found, use `python -m pip` as shown above instead of running `pip` directly.
-- If PowerShell refuses to activate the environment, open Command Prompt and run `.venv\\Scripts\\activate.bat`, or ask your system administrator about the execution-policy setting.
-- To leave the virtual environment, run `deactivate`.
-- To use the project again later, open a terminal in the repository, activate `.venv`, and then run `jupyter lab`.
+- If pip is not found, use `python3 -m pip` on macOS or Linux, or `py -m pip` on Windows.
+- If the `jupyter` command is not found, use the `python3 -m jupyter lab` or `py -m jupyter lab` command shown above.
+- To use the project again later, open a terminal in the repository and run the appropriate JupyterLab command. You do not need to activate anything.
+
+
+### How to close a JupyterLab session
+
+Always save your notebooks before closing JupyterLab. Closing the browser tab alone does not stop the JupyterLab server.
+
+1. Save your notebooks.
+2. Close the JupyterLab browser tab.
+3. Return to the terminal or PowerShell window.
+4. Press `Ctrl+C`, confirm shutdown if prompted, and press `Ctrl+C` again only if necessary.
+
+#### If JupyterLab is running in the current terminal
+
+Return to the terminal or PowerShell window where JupyterLab is running and press:
+
+```text
+Ctrl+C
+```
+
+If prompted to shut down the server, type `y` and press **Enter**. If there is no prompt, press `Ctrl+C` a second time.
+
+#### Stop JupyterLab from another terminal
+
+If the original terminal is unavailable, list the running Jupyter servers:
+
+##### macOS or Linux
+
+```bash
+python3 -m jupyter server list
+```
+
+##### Windows PowerShell
+
+```powershell
+py -m jupyter server list
+```
+
+Then stop the server using its port number, usually `8888`:
+
+##### macOS or Linux
+
+```bash
+python3 -m jupyter server stop 8888
+```
+
+##### Windows PowerShell
+
+```powershell
+py -m jupyter server stop 8888
+```
+
+Replace `8888` with the port shown by the server-list command.
+
