@@ -8,6 +8,7 @@ The notebooks and files in this repository were prepared for an OpenET Technical
 
 * [OpenET Overview](https://docs.google.com/presentation/d/1cRqJY3Fapg5ICTaEX67h73-726rmNjGNMoKmhP2l7yY/edit?usp=sharing)
 * [Day 1 Technical Training](https://docs.google.com/presentation/d/1YajrGZqRAoi9UqpXvNnryP27WZVzu6G66NfEzViz1f0/edit?usp=sharing)
+* [Day 2 Technical Training](https://docs.google.com/presentation/d/1uBor2vbZIbWNiaJ9Xf64u1P6oCrKyWB3TeFFfrM7RtM/edit?usp=sharing)
 
 ## Get Set Up for the Workshop
 
